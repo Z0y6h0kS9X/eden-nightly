@@ -125,9 +125,13 @@ jobs:
           chmod +x ./linux-dependencies.sh
           ./linux-dependencies.sh
           
-      - name: Clone Eden
+      # - name: Clone Eden
+      #   run: |
+      #     git clone 'https://git.eden-emu.dev/eden-emu/eden.git' ./eden
+
+      - name: Clone Citron
         run: |
-          git clone 'https://git.eden-emu.dev/eden-emu/eden.git' ./eden
+          git clone 'https://git.citron-emu.org/Citron/Emulator.git' ./eden
 
       - name: Restore ccache for ${{ matrix.target }}
         if: ${{ matrix.ccache == 'true'}}
